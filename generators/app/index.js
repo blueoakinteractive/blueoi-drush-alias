@@ -36,14 +36,24 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
+      // User directory
+      var userDir = process.env.HOME + '/';
+
+      // Copy out static files. ie: files that don't require changes.
+      this.fs.copyTpl(
+          this.templatePath('drush-alias'),
+          this.destinationPath(userDir + '.drush/'), {
+            aliasName: this.props.aliasName,
+            portNumber: this.props.portNumber
+          }
+      );
 
       // Rename drush alias template and populate variables.
       this.fs.move(
-          this.destinationPath('~/.drush/placeholder.alias.drushrc.php'),
-          this.destinationPath('~/.drush/' + this.props.aliasName + '.alias.drushrc.php'),
+          this.destinationPath(userDir + '.drush/placeholder.aliases.drushrc.php'),
+          this.destinationPath(userDir + '.drush/' + this.props.aliasName + '.aliases.drushrc.php'),
           {
             aliasName: this.props.aliasName,
-            portNumber: this.props.portNumber
           }
       );
 

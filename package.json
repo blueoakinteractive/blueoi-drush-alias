@@ -1,5 +1,5 @@
 {
-  "name": "blueoi-drush-alias",
+  "name": "generator-drush-alias",
   "version": "1.0.0",
   "description": "Use Yeoman to generate a drush aliases for BlueOI",
   "files": [

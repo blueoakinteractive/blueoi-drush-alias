@@ -1,6 +1,6 @@
 <?php
 
-// Alias for the production environment.
+// Alias for the <%= aliasName %> production environment.
 $aliases['master'] = array (
   'remote-host' => '<%= aliasName %>.production.clients.blueoakinteractive.net',
   'remote-user' => '<%= aliasName %>',
@@ -12,7 +12,7 @@ $aliases['master'] = array (
   ),
 );
 
-// Alias for the local environment.
+// Alias for the <%= aliasName %> local environment.
 $aliases['_local'] = array (
   'root' => '/var/www/<%= aliasName %>.boi/www',
 );
