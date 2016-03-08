@@ -18,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
         type: 'input',
         name: 'aliasName',
         message: 'Enter your project\'s name.',
-        default: process.cwd().split("/").pop()
+        default: process.cwd().split("/").pop().split(".").shift()
       },
       {
         type: 'input',
